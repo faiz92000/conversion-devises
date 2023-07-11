@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+  <title>Convertisseur de Devises</title>
+  <style>
+    body {
+      background-color: #f2f8ff;
+    }
+
+    .converter-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin-top: 100px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+    }
+
+    .btn-convert {
+      width: 100%;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="converter-box">
+      <h1 class="text-center">Convertisseur de Devises</h1>
+      <form>
+        <div class="form-group">
+          <label for="amount">Montant:</label>
+          <input type="number" id="amount" class="form-control" placeholder="Montant à convertir">
+        </div>
+        <div class="form-group">
+          <label for="from">De:</label>
+          <select id="from" class="form-control">
+            <option value="AFN">Afghani - AFN</option>
+            <option value="MGA">Ariary Malgache - MGA</option>
+            <option value="THB">Baht Thaïlandaise - THB</option>
+            <option value="ETB">Birr Ethiopienne - ETB</option>
+            <option value="VES">Bolivar souverain - VES</option>
+            <option value="BOB">Boliviano - BOB</option>
+            <option value="SVC">Colon salvadorien - SVC</option>
+            <option value="CRC">Colón costaricien - CRC</option>
+            <option value="NIO">Cordoba Nicaragua - NIO</option>
+            <option value="DKK">Couronne danoise - DKK</option>
+            <option value="ISK">Couronne islandaise - ISK</option>
+            <option value="NOK">Couronne norvégienne - NOK</option>
+            <option value="SEK">Couronne suédoise - SEK</option>
+            <option value="CZK">Couronne tchèque - CZK</option>
+            <option value="GHS">Cedi ghanéen- GHS</option>
+            <option value="GMD">Dalasi Gambien - GMD</option>
+            <option value="MKD">Denar macédonien - MKD</option>
+            <option value="USD">Dollar Americain - USD</option>
+            <option value="DZD">Dinar algérien - DZD</option>
+            <option value="BHD">Dinar bahreïni - BHD</option>
+            <option value="IQD">Dinar Irakien - IQD</option>
+            <option value="JOD">Dinar jordanien - JOD</option>
+            <option value="KWD">Dinar koweïtien - KWD</option>
+            <option value="LYD">Dinar libyen - LYD</option>
+            <option value="RSD">Dinar serbe - RSD</option>
+            <option value="TND">Dinar tunisien - TND</option>
+            <option value="AED">Dirham des Émirats arabes unis - AED</option>
+            <option value="MAD">Dirham Marocain - MAD</option>
+            <option value="USD">Dollar Americain - USD</option>
+            <option value="AUD">Dollar Australien - AUD</option>
+            <option value="BSD">Dollar Bahaméen - BSD</option>
+            <option value="BBD">Dollar barbadien - BBD</option>
+            <option value="BMD">Dollar bermudien - BMD</option>
+            <option value="EUR">Euro - EUR</option>
+            <option value="GBP">Livre sterling - GBP</option>
+            <option value="KMF">KMF</option>
+            <!-- Ajoutez d'autres devises ici -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="to">À:</label>
+          <select id="to" class="form-control">
+            <option value="AFN">Afghani - AFN</option>
+            <option value="MGA">Ariary Malgache - MGA</option>
+            <option value="THB">Baht Thaïlandaise - THB</option>
+            <option value="ETB">Birr Ethiopienne - ETB</option>
+            <option value="VES">Bolivar souverain - VES</option>
+            <option value="BOB">Boliviano - BOB</option>
+            <option value="SVC">Colon salvadorien - SVC</option>
+            <option value="CRC">Colón costaricien - CRC</option>
+            <option value="NIO">Cordoba Nicaragua - NIO</option>
+            <option value="DKK">Couronne danoise - DKK</option>
+            <option value="ISK">Couronne islandaise - ISK</option>
+            <option value="NOK">Couronne norvégienne - NOK</option>
+            <option value="SEK">Couronne suédoise - SEK</option>
+            <option value="CZK">Couronne tchèque - CZK</option>
+            <option value="GHS">Cedi ghanéen- GHS</option>
+            <option value="GMD">Dalasi Gambien - GMD</option>
+            <option value="MKD">Denar macédonien - MKD</option>
+            <option value="USD">Dollar Americain - USD</option>
+            <option value="DZD">Dinar algérien - DZD</option>
+            <option value="BHD">Dinar bahreïni - BHD</option>
+            <option value="IQD">Dinar Irakien - IQD</option>
+            <option value="JOD">Dinar jordanien - JOD</option>
+            <option value="KWD">Dinar koweïtien - KWD</option>
+            <option value="LYD">Dinar libyen - LYD</option>
+            <option value="RSD">Dinar serbe - RSD</option>
+            <option value="TND">Dinar tunisien - TND</option>
+            <option value="AED">Dirham des Émirats arabes unis - AED</option>
+            <option value="MAD">Dirham Marocain - MAD</option>
+            <option value="USD">Dollar Americain - USD</option>
+            <option value="AUD">Dollar Australien - AUD</option>
+            <option value="BSD">Dollar Bahaméen - BSD</option>
+            <option value="BBD">Dollar barbadien - BBD</option>
+            <option value="BMD">Dollar bermudien - BMD</option>
+            <option value="EUR">Euro - EUR</option>
+            <option value="GBP">Livre sterling - GBP</option>
+            <option value="KMF">KMF</option>
+            <!-- Ajoutez d'autres devises ici -->
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary btn-convert" onclick="convertCurrency()">Convertir</button>
+      </form>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function convertCurrency() {
+      var amount = parseFloat(document.getElementById('amount').value);
+      var fromCurrency = document.getElementById('from').value;
+      var toCurrency = document.getElementById('to').value;
+
+      var apiKey = '9671fa2175aa32de09c4f24a';
+      var apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}/${amount}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          if (data.result === 'success') {
+            var convertedAmount = data.conversion_result;
+            document.getElementById('result').innerText = convertedAmount.toFixed(2) + ' ' + toCurrency;
+          } else {
+            document.getElementById('result').innerText = "Erreur lors de la conversion";
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          document.getElementById('result').innerText = "Erreur lors de la conversion";
+        });
+    }
+  </script>
+</body>
+
+</html>
